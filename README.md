@@ -28,5 +28,5 @@ rackup
 Then you can open
 
 ```
-open http://0.0.0.0:3000
+open http://0.0.0.0:9292
 ```
