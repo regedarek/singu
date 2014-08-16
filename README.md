@@ -33,7 +33,7 @@ open http://0.0.0.0:9292
 
 ## Application Structure
 
-Generator creates files like below
+Generator proceeds 
 ```
 Code» singu your_app
       create  your_app
@@ -44,6 +44,7 @@ Code» singu your_app
       create  your_app/app.rb
       create  your_app/app/lib/db.rb
       create  your_app/app/models.rb
+      create  your_app/app/models/
       create  your_app/app/routes.rb
       create  your_app/app/routes/base.rb
       create  your_app/config.ru
