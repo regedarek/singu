@@ -30,3 +30,28 @@ Then you can open
 ```
 open http://0.0.0.0:9292
 ```
+
+## Application Structure
+
+Generator creates files like below
+```
+Code» singu your_app
+      create  your_app
+      create  your_app/.gitignore
+      create  your_app/Gemfile
+      create  your_app/Procfile
+      create  your_app/Rakefile
+      create  your_app/app.rb
+      create  your_app/app/lib/db.rb
+      create  your_app/app/models.rb
+      create  your_app/app/routes.rb
+      create  your_app/app/routes/base.rb
+      create  your_app/config.ru
+       exist  your_app
+      create  your_app/client/Gruntfile.js
+      create  your_app/client/app/index.html
+      create  your_app/client/package.json
+         run  git init . from "./your_app"
+Initialized empty Git repository in /Users/rege/Code/your_app/.git/
+         run  bundle from "./your_app"
+```
