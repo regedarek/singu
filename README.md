@@ -59,6 +59,8 @@ Initialized empty Git repository in /Users/rege/Code/your_app/.git/
 
 ## To release new version of singu
 
+Commit changes and then
+
 ```
 git tag -a v0.0.*
 git push origin master --tags
