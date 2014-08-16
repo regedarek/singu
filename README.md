@@ -18,3 +18,15 @@ To create new application in current directory run
 ```
 singu app_name
 ```
+
+To start sinatra app server run
+
+```
+rackup
+```
+
+Then you can open
+
+```
+open http://0.0.0.0:3000
+```
