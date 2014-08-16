@@ -56,3 +56,14 @@ Code» singu your_app
 Initialized empty Git repository in /Users/rege/Code/your_app/.git/
          run  bundle from "./your_app"
 ```
+
+## To release new version of singu
+
+```
+git tag -a v0.0.*
+git push origin master --tags
+gem build singu.gemspec
+gem push singu-0.0.*.gem
+
+gem update singu
+```
