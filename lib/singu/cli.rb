@@ -2,6 +2,7 @@ require 'pathname'
 require 'fileutils'
 require 'thor'
 require 'thor/group'
+require 'trevi/extensions'
 
 module Singu
   class CLI < Thor::Group
