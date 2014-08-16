@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 gem 'sinatra', require: 'sinatra/base'
-gem 'dotenv'
-gem 'rake'
+gem 'dotenv' # environment variables
+gem 'rake', '~> 10.3'
 
 # DB
 gem 'sqlite3'
 
 group :development do
-  gem 'thin'
-  gem 'byebug'
+  gem 'thin'   #server
+  gem 'byebug' #debugging
 end
