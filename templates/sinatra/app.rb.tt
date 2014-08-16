@@ -22,28 +22,6 @@ require 'app/routes'
 
 module <%= @name.camel_case %>
   class App < Sinatra::Application
-    configure do
-      set :database, lambda {
-        ENV['DATABASE_URL'] ||
-          "postgres://localhost:5432/<%= @name.file_name %>_#{environment}"
-      }
-    end
-
-    configure :development, :staging do
-      database.loggers << Logger.new(STDOUT)
-    end
-
-    configure do
-      disable :method_override
-      disable :static
-
-      set :sessions,
-          httponly: true,
-          secure: production?,
-          secure: false,
-          expire_after: 5.years,
-          secret: ENV['SESSION_SECRET']
-    end
   end
 end
 
