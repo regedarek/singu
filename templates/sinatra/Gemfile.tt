@@ -1,0 +1,17 @@
+source 'https://rubygems.org'
+ruby '2.1.2'
+
+gem 'sinatra', require: 'sinatra/base'
+gem 'dotenv' # environment variables
+gem 'rake', '~> 10.3'
+
+# DB
+gem 'sqlite3'
+<% if !!@gems %>
+# Custom gems, please set versions
+<%= @gems.collect{|gem| "gem '#{gem}'"}.compact.join("\n") %>
+<% end %>
+group :development do
+  gem 'thin'   #server
+  gem 'byebug' #debugging
+end
