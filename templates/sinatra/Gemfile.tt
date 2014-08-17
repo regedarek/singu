@@ -9,9 +9,7 @@ gem 'rake', '~> 10.3'
 gem 'sqlite3'
 
 # Custom gems, please set versions
-<% @gems.each do |gem| %>
-gem '<%= gem %>'
-<% end %>
+<%= @gems.collect{|gem| "gem '#{gem}'"}.compact.join("\n") %>
 
 group :development do
   gem 'thin'   #server
