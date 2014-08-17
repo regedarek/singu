@@ -52,7 +52,9 @@ module Singu
       system "git clone -q --depth 1 git@github.com:#{repo}.git tmp/#{@name}"
       directory "tmp/#{@name}", @app_path
       remove_dir "tmp"
-      remove_file ".git"
+      inside(@app_path) do
+        remove_file ".git"
+      end
     end
   end
 end
