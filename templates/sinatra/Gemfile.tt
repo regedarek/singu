@@ -8,6 +8,11 @@ gem 'rake', '~> 10.3'
 # DB
 gem 'sqlite3'
 
+# Custom gems, please set versions
+<% @gems.each do |gem| %>
+gem '<%= gem %>'
+<% end %>
+
 group :development do
   gem 'thin'   #server
   gem 'byebug' #debugging

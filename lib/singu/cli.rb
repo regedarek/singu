@@ -1,5 +1,6 @@
 require 'pathname'
 require 'fileutils'
+require 'pry-remote'
 require 'thor'
 require 'thor/group'
 require 'singu/extensions'
@@ -14,6 +15,7 @@ module Singu
 
     desc "Creates a new Sinatra + Angular.js application"
     argument :name, :type => :string, :desc => "The name of the new application"
+    class_option :gems, :type => :array, :description => "The names of gems you want to add to the new application"
 
     def setup
       @app_path = name.directory_name
