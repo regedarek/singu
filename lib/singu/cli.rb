@@ -12,7 +12,7 @@ module Singu
     DEFAULT_ANGULAR_TEMPLATE_REPO = 'regedarek/singu-angular-template'
 
     def self.source_root
-      File.expand_path('../../../templates', __FILE__)
+      "."
     end
 
     desc "Creates a new Sinatra + Angular.js application"
@@ -29,8 +29,10 @@ module Singu
     def create_app_from_template
       sinatra_repo = options.fetch(:template){{}}.fetch('sinatra', DEFAULT_SINATRA_TEMPLATE_REPO)
       angular_repo = options.fetch(:template){{}}.fetch('angular', DEFAULT_ANGULAR_TEMPLATE_REPO)
-      clone_repo(sinatra_repo)
-      clone_repo(angular_repo) unless options[:'skip-angular']
+      inside(@app_path) do
+        clone_repo(sinatra_repo)
+        clone_repo(angular_repo) unless options[:'skip-angular']
+      end
     end
 
     def initialize_git_repo
@@ -49,8 +51,10 @@ module Singu
 
     def clone_repo(repo)
       repo_name = repo.split('/').last
-      system "git clone -q --depth 1 git@github.com:#{repo}.git templates/#{repo_name}"
-      directory repo_name, @app_path
+      system "git clone -q --depth 1 git@github.com:#{repo}.git tmp/#{@name}"
+      directory "tmp/#{@name}", @app_path
+      remove_dir "tmp"
+      remove_file ".git"
     end
   end
 end
