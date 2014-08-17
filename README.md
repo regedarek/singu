@@ -30,9 +30,17 @@ open http://0.0.0.0:9292
 ```
 
 ## Possible options
+* --gems [array] => add following gems to Gemfile and install them
 ```
-# --gems [array] => add following gems to Gemfile and install them
 singu [your_app_name] --gems haml pry
+```
+* --skip-angular [boolean] => don't append client dir with base angular app
+```
+singu [your_app_name] --skip-angular=true
+```
+* --template [hash] => install sinatra and angular apps from external github repos
+```
+singu [your_app_name] --template sinatra:regedarek.singu-custom-sinatra-app angular:regedarek/singu-custom-angular-app
 ```
 
 ## Application Structure
