@@ -29,10 +29,8 @@ module Singu
     def create_app_from_template
       sinatra_repo = options.fetch(:template){{}}.fetch('sinatra', DEFAULT_SINATRA_TEMPLATE_REPO)
       angular_repo = options.fetch(:template){{}}.fetch('angular', DEFAULT_ANGULAR_TEMPLATE_REPO)
-      inside(@app_path) do
-        clone_repo(sinatra_repo)
-        clone_repo(angular_repo) unless options[:'skip-angular']
-      end
+      clone_repo(sinatra_repo)
+      clone_repo(angular_repo) unless options[:'skip-angular']
     end
 
     def initialize_git_repo
