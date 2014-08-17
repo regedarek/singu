@@ -8,8 +8,10 @@ gem 'rake', '~> 10.3'
 # DB
 gem 'sqlite3'
 
+<% if @gems %>
 # Custom gems, please set versions
 <%= @gems.collect{|gem| "gem '#{gem}'"}.compact.join("\n") %>
+<% end %>
 
 group :development do
   gem 'thin'   #server
