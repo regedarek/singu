@@ -19,20 +19,16 @@ module Singu
     argument :name, type: :string, desc: "The name of the new application"
     class_option :gems, type: :array, description: "The names of gems you want to add to the new application"
     class_option :template, type: :hash, description: "The github repo ex: regedarek/skeleton", enum: 2
-    class_option :'skip-angular', :type => :boolean
+    class_option :'skip-angular', type: :boolean
 
     def setup
       @app_path = name.directory_name
       @name     = name.file_name
-
-      # options.each do |key, value|
-      #   instance_variable_set "@#{key.to_s}".to_sym, value
-      # end
     end
 
     def create_app_from_template
-      sinatra_repo = options[:template].fetch('sinatra', DEFAULT_SINATRA_TEMPLATE_REPO)
-      angular_repo = options[:template].fetch('angular', DEFAULT_ANGULAR_TEMPLATE_REPO)
+      sinatra_repo = options.fetch(:template){{}}.fetch('sinatra', DEFAULT_SINATRA_TEMPLATE_REPO)
+      angular_repo = options.fetch(:template){{}}.fetch('angular', DEFAULT_ANGULAR_TEMPLATE_REPO)
       clone_repo(sinatra_repo)
       clone_repo(angular_repo) unless options[:'skip-angular']
     end
