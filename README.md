@@ -42,6 +42,9 @@ singu [your_app_name] --skip-angular=true
 ```
 singu [your_app_name] --template sinatra:regedarek.singu-custom-sinatra-app angular:regedarek/singu-custom-angular-app
 ```
+## Example templates
+* https://github.com/regedarek/singu-angular-template
+* https://github.com/regedarek/singu-sinatra-template
 
 ## Application Structure
 
